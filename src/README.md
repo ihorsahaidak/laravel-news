@@ -5,4 +5,5 @@
 ####Settings instruction
 -[will be soon]()
 
+
 The link to package in packagist.org [Here you go](https://packagist.org/packages/thesagaydak/news).
