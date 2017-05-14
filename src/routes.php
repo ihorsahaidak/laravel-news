@@ -1,3 +1,3 @@
 <?php
 
-Route::get("letest_news", ['as' => 'index', 'uses' => 'Thesagaydak\News\Http\Controllers\NewsController@getIndex']);
+//Route::get("letest_news", ['as' => 'thesagaydak_news.index', 'uses' => 'Thesagaydak\News\Http\Controllers\NewsController@getIndex']);

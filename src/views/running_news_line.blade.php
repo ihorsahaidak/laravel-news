@@ -27,5 +27,6 @@
                 <strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</strong>
             @endforeach
     </marquee>
+   {{-- {{$news_line ?? ''}}--}}
 </body>
 </html>

@@ -1,17 +1,15 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: igorsagaydak
  * Date: 5/12/17
  * Time: 7:04 PM
  */
-
 namespace Thesagaydak\News\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Thesagaydak\News\Http\Controllers\NewsController;
-
+use Illuminate\Routing\Router;
 
 class NewsServiceProvider extends ServiceProvider
 {
@@ -20,11 +18,9 @@ class NewsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Router $router)
     {
-        require __DIR__ . "/../routes.php";
-        $this->app->make('Thesagaydak\News\Http\Controllers\NewsController');
-        $this->loadViewsFrom(__DIR__ . '/../views', 'news');
+        $router->get('letest_news', ['as' => 'letest_news.index', 'uses' => 'Thesagaydak\News\Http\Controllers\NewsController@getIndex']);
     }
 
     /**
@@ -38,5 +34,10 @@ class NewsServiceProvider extends ServiceProvider
             return new NewsController();
         });
 
+        $this->loadViewsFrom(__DIR__ . '/../views', 'news');
+
+        require __DIR__ . "/../routes.php";
+
+        include_once __DIR__ . "/../Http/Controllers/NewsController.php";
     }
 }
